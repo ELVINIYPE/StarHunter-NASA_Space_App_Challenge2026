@@ -18,6 +18,13 @@ import urllib.request
 import numpy as np
 import pandas as pd
 
+# Use the Mac's own certificate store if available (helps on school/event Wi-Fi)
+try:
+    import truststore
+    truststore.inject_into_ssl()
+except ImportError:
+    pass
+
 START, STOP, STEP = "2026-11-01", "2027-12-31", "1 h"
 
 # ---------- 1. ask NASA JPL Horizons for the Moon's position ----------
