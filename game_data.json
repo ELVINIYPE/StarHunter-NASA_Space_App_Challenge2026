@@ -1,0 +1,244 @@
+{
+ "sources": [
+  "https://www.asc-csa.gc.ca/eng/youth-educators/quick-history-canada-on-the-moon.asp",
+  "https://www.canada.ca/en/space-agency/news/2026/08/canada-intends-to-repurpose-canadarm3-investments-to-support-the-next-phase-of-lunar-exploration.html",
+  "https://www.nasa.gov/history/alsj/a11/a11.landing.html",
+  "https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/",
+  "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-11_Launch_Vehicle-Spacecraft_Key_Facts.htm"
+ ],
+ "saturn_v_stages": [
+  {
+   "stage": "S-IC",
+   "contractor": "Boeing",
+   "height_m": 42.1,
+   "diameter_m": 10.1,
+   "engine_type": "F-1",
+   "engine_count": 5,
+   "fuel": "RP-1",
+   "oxidizer": "LO2",
+   "thrust_total_kN": 33851.0
+  },
+  {
+   "stage": "S-II",
+   "contractor": "North American Rockwell",
+   "height_m": 24.8,
+   "diameter_m": 10.1,
+   "engine_type": "J-2",
+   "engine_count": 5,
+   "fuel": "LH2",
+   "oxidizer": "LO2",
+   "thrust_total_kN": 5115.0
+  }
+ ],
+ "apollo11_timeline": [
+  {
+   "event": "Launch",
+   "hours": 0.0,
+   "day": 1,
+   "burn_seconds": null,
+   "notes": "July 16 1969, 9:32 a.m. EDT, Pad 39A"
+  },
+  {
+   "event": "Translunar injection (TLI)",
+   "hours": 2.733,
+   "day": 1,
+   "burn_seconds": 348.0,
+   "notes": "S-IVB second burn of 5 min 48 s"
+  },
+  {
+   "event": "S-IVB separation",
+   "hours": 4.667,
+   "day": 1,
+   "burn_seconds": null,
+   "notes": "S-IVB sent into orbit around the Sun"
+  },
+  {
+   "event": "Lunar orbit insertion (LOI)",
+   "hours": 75.833,
+   "day": 4,
+   "burn_seconds": 357.5,
+   "notes": "SPS retrograde burn behind the Moon"
+  },
+  {
+   "event": "Undocking",
+   "hours": 100.2,
+   "day": 5,
+   "burn_seconds": null,
+   "notes": "Eagle separates from Columbia"
+  },
+  {
+   "event": "Descent orbit insertion (DOI)",
+   "hours": 101.6,
+   "day": 5,
+   "burn_seconds": 30.0,
+   "notes": "LM descent engine on the far side"
+  },
+  {
+   "event": "Powered descent",
+   "hours": 102.55,
+   "day": 5,
+   "burn_seconds": 756.3,
+   "notes": "Descent engine burn to touchdown"
+  },
+  {
+   "event": "First step (EVA start)",
+   "hours": 109.7,
+   "day": 5,
+   "burn_seconds": null,
+   "notes": "Armstrong steps onto the Moon"
+  },
+  {
+   "event": "EVA end",
+   "hours": 111.65,
+   "day": 5,
+   "burn_seconds": null,
+   "notes": "Moonwalk lasted more than 2.5 hours"
+  },
+  {
+   "event": "Lunar liftoff",
+   "hours": 124.367,
+   "day": 6,
+   "burn_seconds": 435.0,
+   "notes": "Ascent engine burn"
+  },
+  {
+   "event": "Docking with Columbia",
+   "hours": 128.05,
+   "day": 6,
+   "burn_seconds": null,
+   "notes": "CSM 27th revolution"
+  },
+  {
+   "event": "Midcourse correction",
+   "hours": 150.5,
+   "day": 7,
+   "burn_seconds": 11.2,
+   "notes": "SPS burn on the way home"
+  },
+  {
+   "event": "Parachute deployment",
+   "hours": 195.217,
+   "day": 9,
+   "burn_seconds": null,
+   "notes": null
+  },
+  {
+   "event": "Splashdown",
+   "hours": 195.31,
+   "day": 9,
+   "burn_seconds": null,
+   "notes": "Pacific Ocean, about 13 miles from USS Hornet"
+  }
+ ],
+ "apollo11_orbits": [
+  {
+   "phase": "Earth parking orbit",
+   "body": "Earth",
+   "low_km": 183.5,
+   "high_km": 186.7,
+   "eccentricity": 0.0002
+  },
+  {
+   "phase": "After LOI burn",
+   "body": "Moon",
+   "low_km": 111.0,
+   "high_km": 305.8,
+   "eccentricity": 0.0501
+  },
+  {
+   "phase": "After circularization",
+   "body": "Moon",
+   "low_km": 99.8,
+   "high_km": 113.5,
+   "eccentricity": 0.0037
+  },
+  {
+   "phase": "Descent orbit (after DOI)",
+   "body": "Moon",
+   "low_km": 14.5,
+   "high_km": 107.8,
+   "eccentricity": 0.0259
+  },
+  {
+   "phase": "Descent orbit (ALSJ value)",
+   "body": "Moon",
+   "low_km": 16.7,
+   "high_km": 111.1,
+   "eccentricity": 0.0262
+  },
+  {
+   "phase": "LM after lunar liftoff",
+   "body": "Moon",
+   "low_km": 17.7,
+   "high_km": 88.5,
+   "eccentricity": 0.0198
+  }
+ ],
+ "canada_on_the_moon": [
+  {
+   "year": 1959,
+   "mission": "Radar experiment",
+   "contribution": "Prince Albert Radar Laboratory (Saskatchewan) bounced a telecommunication call off the Moon"
+  },
+  {
+   "year": 1969,
+   "mission": "Apollo 11",
+   "contribution": "Héroux landing gear for the Eagle lunar module plus engineering on lander design and heat shield"
+  },
+  {
+   "year": 1969,
+   "mission": "Apollo 11",
+   "contribution": "Canadian flight surgeon Dr. William Carpentier cared for the crew in quarantine"
+  },
+  {
+   "year": 1970,
+   "mission": "Apollo 13",
+   "contribution": "University of Toronto engineers calculated the pressure needed to separate the capsule from the lander"
+  },
+  {
+   "year": 1971,
+   "mission": "Apollo 16 and 17",
+   "contribution": "Sudbury Ontario used as a lunar geology training site"
+  },
+  {
+   "year": 2019,
+   "mission": "Gateway",
+   "contribution": "Canadarm3 robotic system announced"
+  },
+  {
+   "year": 2020,
+   "mission": "Artemis Accords",
+   "contribution": "CSA President Lisa Campbell signed on Canada's behalf"
+  },
+  {
+   "year": 2020,
+   "mission": "Artemis II and Gateway",
+   "contribution": "Canada secured two astronaut flights"
+  },
+  {
+   "year": 2021,
+   "mission": "Lunar technology",
+   "contribution": "C$3 million for lunar technology and a Canadian rover to land with NASA"
+  },
+  {
+   "year": 2023,
+   "mission": "Artemis III",
+   "contribution": "Dr. Gordon Osinski joined NASA's Artemis III Geology Team"
+  },
+  {
+   "year": 2023,
+   "mission": "Training",
+   "contribution": "Astronauts trained in lunar geology at Kamestastin crater in Labrador"
+  },
+  {
+   "year": 2026,
+   "mission": "Artemis II",
+   "contribution": "Jeremy Hansen named to fly around the Moon (first non-American)"
+  },
+  {
+   "year": 2026,
+   "mission": "Canadarm3",
+   "contribution": "CSA intends to repurpose Canadarm3 investments for the next phase of lunar exploration (Aug 6 2026)"
+  }
+ ]
+}
