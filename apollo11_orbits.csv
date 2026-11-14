@@ -1,0 +1,7 @@
+phase,body,low_point,high_point,unit,source_url
+Earth parking orbit,Earth,114,116,statute_mile,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+After LOI burn,Moon,69,190,statute_mile,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+After circularization,Moon,62,70.5,statute_mile,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Descent orbit (after DOI),Moon,9,67,statute_mile,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Descent orbit (ALSJ value),Moon,9,60,nautical_mile,https://www.nasa.gov/history/alsj/a11/a11.landing.html
+LM after lunar liftoff,Moon,11,55,statute_mile,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/

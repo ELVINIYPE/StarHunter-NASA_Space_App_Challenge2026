@@ -1,0 +1,3 @@
+stage,contractor,height_ft,diameter_ft,engine_type,engine_count,fuel,oxidizer,thrust_each_lbf,thrust_total_lbf,source_url
+S-IC,Boeing,138.03,33.0,F-1,5,RP-1,LO2,1522000,7610000,https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-11_Launch_Vehicle-Spacecraft_Key_Facts.htm
+S-II,North American Rockwell,81.5,33.0,J-2,5,LH2,LO2,230000,1150000,https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-11_Launch_Vehicle-Spacecraft_Key_Facts.htm

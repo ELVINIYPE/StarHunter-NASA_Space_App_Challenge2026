@@ -1,0 +1,15 @@
+event,ground_elapsed_time,burn_seconds,notes,source_url
+Launch,000:00:00,,"July 16 1969, 9:32 a.m. EDT, Pad 39A",https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Translunar injection (TLI),002:44:00,348,S-IVB second burn of 5 min 48 s,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+S-IVB separation,004:40:00,,S-IVB sent into orbit around the Sun,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Lunar orbit insertion (LOI),075:50:00,357.5,SPS retrograde burn behind the Moon,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Undocking,100:12:00,,Eagle separates from Columbia,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Descent orbit insertion (DOI),101:36:00,30,LM descent engine on the far side,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Powered descent,102:33:00,756.3,Descent engine burn to touchdown,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+First step (EVA start),109:42:00,,Armstrong steps onto the Moon,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+EVA end,111:39:00,,Moonwalk lasted more than 2.5 hours,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Lunar liftoff,124:22:00,435,Ascent engine burn,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Docking with Columbia,128:03:00,,CSM 27th revolution,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Midcourse correction,150:30:00,11.2,SPS burn on the way home,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Parachute deployment,195:13:00,,,https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
+Splashdown,195:18:35,,"Pacific Ocean, about 13 miles from USS Hornet",https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
