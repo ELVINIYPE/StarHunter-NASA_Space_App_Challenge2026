@@ -19,6 +19,7 @@ OUT = Path(__file__).parent / "output"
 OUT.mkdir(exist_ok=True)
 
 FT_TO_M = 0.3048
+LB_TO_T = 0.00045359237
 LBF_TO_KN = 0.00444822
 TO_KM = {"statute_mile": 1.609344, "nautical_mile": 1.852, "km": 1.0}
 MOON_RADIUS_KM = 1737.4
@@ -29,7 +30,8 @@ def load(name):
     df = pd.read_csv(SRC / name)
     df.columns = df.columns.str.strip()
     df = df.apply(lambda c: c.str.strip() if c.dtype == "object" else c)
-    missing = df.drop(columns=[c for c in df.columns if c in ("notes", "burn_seconds")]).isna().sum().sum()
+    optional = ("notes", "burn_seconds", "source_url_2")
+    missing = df.drop(columns=[c for c in df.columns if c in optional]).isna().sum().sum()
     if missing:
         print(f"  warning: {name} has {missing} empty cells")
     if not df["source_url"].str.startswith("https://").all():
@@ -47,7 +49,11 @@ stages = load("saturn_v_stages.csv")
 stages["height_m"] = (stages.height_ft * FT_TO_M).round(1)
 stages["diameter_m"] = (stages.diameter_ft * FT_TO_M).round(1)
 stages["thrust_total_kN"] = (stages.thrust_total_lbf * LBF_TO_KN).round(0)
-stages["thrust_each_kN"] = (stages.thrust_each_lbf * LBF_TO_KN).round(0)
+for col in ("fueled_weight", "dry_weight", "oxidizer", "fuel"):
+    stages[col + "_t"] = (stages[col + "_lb"] * LB_TO_T).round(1)   # pounds -> tonnes
+stages["propellant_t"] = stages.oxidizer_t + stages.fuel_t
+stages["propellant_percent"] = (100 * stages.propellant_t / stages.fueled_weight_t).round(1)  # how much of each stage is fuel
+stages["ox_to_fuel_ratio"] = (stages.oxidizer_lb / stages.fuel_lb.where(stages.fuel_lb > 0)).round(2)
 
 # ---------- Apollo 11 timeline ----------
 timeline = load("apollo11_timeline.csv")
@@ -74,9 +80,12 @@ orbits.to_csv(OUT / "apollo11_orbits_clean.csv", index=False)
 csa.to_csv(OUT / "csa_moon_contributions_clean.csv", index=False)
 
 game = {
-    "sources": sorted(set(pd.concat([stages.source_url, timeline.source_url, orbits.source_url, csa.source_url]))),
-    "saturn_v_stages": stages[["stage", "contractor", "height_m", "diameter_m", "engine_type", "engine_count",
-                               "fuel", "oxidizer", "thrust_total_kN"]].to_dict("records"),
+    "sources": sorted(set(pd.concat([stages.source_url, stages.source_url_2.dropna(), timeline.source_url,
+                                     orbits.source_url, csa.source_url]))),
+    "saturn_v_stages": stages[["stage", "name", "contractor", "height_m", "diameter_m", "engine_type", "engine_count",
+                               "fuel", "oxidizer", "thrust_total_kN", "fueled_weight_t", "dry_weight_t",
+                               "propellant_t", "propellant_percent"]]
+        .astype(object).where(stages.notna(), None).to_dict("records"),
     "apollo11_timeline": timeline[["event", "hours", "day", "burn_seconds", "notes"]]
         .astype(object).where(timeline[["event", "hours", "day", "burn_seconds", "notes"]].notna(), None).to_dict("records"),
     "apollo11_orbits": orbits[["phase", "body", "low_km", "high_km", "eccentricity"]].to_dict("records"),
@@ -86,6 +95,8 @@ with open(OUT / "game_data.json", "w", encoding="utf-8") as f:
     json.dump(game, f, indent=1, ensure_ascii=False)
 
 # ---------- summary ----------
+print(stages[["stage", "height_m", "fueled_weight_t", "dry_weight_t", "propellant_percent", "ox_to_fuel_ratio"]].to_string(index=False))
+print(f"Stack height of stages + IU: {stages.height_m.sum():.1f} m | fueled weight: {stages.fueled_weight_t.sum():,.0f} t")
 print(f"Saturn V stages: {len(stages)}  | Apollo 11 events: {len(timeline)}  | orbits: {len(orbits)}  | CSA items: {len(csa)}")
 print(f"Mission length: {timeline.hours.max():.1f} hours ({timeline.hours.max() / 24:.1f} days)")
 print(f"Total burn time listed: {timeline.burn_seconds.sum():.0f} s")

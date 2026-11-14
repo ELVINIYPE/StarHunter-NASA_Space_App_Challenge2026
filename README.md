@@ -15,7 +15,7 @@ moon_data.py       optional: fetches Moon positions live from the NASA JPL Horiz
 
 | File | What it holds | Source |
 |---|---|---|
-| `saturn_v_stages.csv` | S-IC and S-II stage size, engines, propellants, thrust | NASA SP-4029, Apollo 11 Launch Vehicle Key Facts |
+| `saturn_v_stages.csv` | All 3 stages + Instrument Unit: size, engines, thrust, fueled/dry weight, oxidizer and fuel weight | NASA SP-4029 Key Facts; NASA Apollo 11 Press Kit |
 | `apollo11_timeline.csv` | 14 mission events with elapsed time and burn lengths | NASA Apollo 11 Mission Overview |
 | `apollo11_orbits.csv` | Earth and lunar orbit low/high points for each phase | NASA Apollo 11 Mission Overview; Apollo 11 Lunar Surface Journal |
 | `csa_moon_contributions.csv` | Canada's role in Moon exploration, 1959 to today | CSA "A quick history of Canada on the Moon"; CSA news release (Aug 2026) |
@@ -25,7 +25,7 @@ moon_data.py       optional: fetches Moon positions live from the NASA JPL Horiz
 1. Load each CSV, trim spaces, drop duplicates.
 2. Validate: flag empty cells, require an `https` source link on every row, check events are in time order.
 3. Convert units: feet → metres, pound-force → kilonewtons, statute/nautical miles → km, mission clock (HHH:MM:SS) → hours.
-4. Derive values: mission day of each event, and each orbit's eccentricity from its low and high points
+4. Derive values: weights in tonnes, how much of each stage is propellant (%), oxidizer-to-fuel ratio, mission day of each event, and each orbit's eccentricity from its low and high points
    (radius = body radius + altitude; e = (r_high − r_low) / (r_high + r_low)).
 5. Export cleaned CSVs, one `game_data.json` for the game, and a timeline chart.
 
@@ -39,6 +39,7 @@ python3 process_data.py
 ## Sources
 
 - NASA SP-4029, Apollo 11 Launch Vehicle/Spacecraft Key Facts: https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-11_Launch_Vehicle-Spacecraft_Key_Facts.htm
+- NASA, Apollo 11 Press Kit (1969): https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_PressKit.pdf
 - NASA, Apollo 11 Mission Overview: https://www.nasa.gov/missions/apollo/apollo-11-mission-overview/
 - NASA, Apollo 11 Lunar Surface Journal (landing): https://www.nasa.gov/history/alsj/a11/a11.landing.html
 - NASA JPL Horizons API (Moon positions): https://ssd.jpl.nasa.gov/api/horizons.api
